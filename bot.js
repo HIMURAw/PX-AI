@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const config = require('./config.js');
 
 const client = new Client({
@@ -14,6 +14,7 @@ const client = new Client({
     ]
 });
 
+client.commands = new Collection();
 
 client.login(config.TOKEN)
     .then(() => console.log('Logged in successfully!'))
